@@ -41,8 +41,8 @@ export default function InsightsSection() {
   return (
     <>
       <h1 className="text-xl md:text-3xl py-6 px-2">Insights</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="overflow-hidden col-span-1 lg:col-span-7 bg-white py-6 rounded-3xl border-[0.5px] drop-shadow-sm px-2 border-[0px 5px 22px 0px #0000000A]">
+      <div className="flex flex-col lg:flex-row gap-6 overflow-auto">
+        <div className="overflow-hidden flex-1 col-span-1 lg:col-span-7 bg-white py-6 rounded-3xl border-[0.5px] drop-shadow-sm px-2 border-[0px 5px 22px 0px #0000000A]">
           <div className="flex items-center gap-2 mb-6 px-6">
             <svg
               width="10"
@@ -164,7 +164,7 @@ export default function InsightsSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden col-span-1 lg:col-span-3 bg-white py-8 rounded-3xl border-[0.5px] drop-shadow-sm border-[0px 5px 22px 0px #0000000A]">
+        <div className="lg:w-[260px] overflow-hidden col-span-1 lg:col-span-3 bg-white py-8 rounded-3xl border-[0.5px] drop-shadow-sm border-[0px 5px 22px 0px #0000000A]">
           <div className="flex items-center gap-2 mb-6 px-6">
             <svg
               width="10"
@@ -235,7 +235,7 @@ export default function InsightsSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden col-span-1 lg:col-span-2 bg-[#15B79E] border-[0px 5px 22px 0px #0000000A] drop-shadow-sm p-6 rounded-3xl text-white">
+        <div className="lg:w-[260px] overflow-hidden col-span-1 lg:col-span-2 bg-[#15B79E] border-[0px 5px 22px 0px #0000000A] drop-shadow-sm p-6 rounded-3xl text-white" style={{ backgroundImage: 'url(/card-bg.svg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="flex items-center gap-2 mb-6">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
               <path d="M8.3125 0.875C6.24119 0.877275 4.25538 1.70111 2.79074 3.16574C1.32611 4.63038 0.502275 6.61619 0.5 8.6875V15.2758C0.500413 15.6003 0.629526 15.9115 0.859022 16.141C1.08852 16.3705 1.39966 16.4996 1.72422 16.5H8.3125C10.3845 16.5 12.3716 15.6769 13.8368 14.2118C15.3019 12.7466 16.125 10.7595 16.125 8.6875C16.125 6.6155 15.3019 4.62836 13.8368 3.16323C12.3716 1.6981 10.3845 0.875 8.3125 0.875Z" />
