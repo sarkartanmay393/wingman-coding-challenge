@@ -3,14 +3,10 @@
 import StatsGrid from "@/components/StatsGrid";
 import InsightsSection from "@/components/InsightsSection";
 import Orders from "@/components/Orders";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "next/navigation";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { ArrowDown } from "lucide-react";
 
 export default function Dashboard() {
   const params = useSearchParams();
@@ -30,17 +26,19 @@ function SummaryView() {
     <div className="space-y-8 mx-2 md:mx-8 my-2 md:my-4 py-8 px-6 border rounded-3xl bg-white">
       <div className="flex justify-between items-center gap-2">
         <h1 className="text-xl md:text-3xl ">At a glance</h1>
-        <Select value="7d">
-          <SelectTrigger
-            value="7d"
-            className="w-min md:px-4 md:py-2 bg-white rounded-lg text-sm text-gray-600 border border-gray-200 "
-          >
-            <Button size="sm">7 Days</Button>
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="7d">7 Days</SelectItem>
-          </SelectContent>
-        </Select>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button size="sm" className="w-min md:px-4 md:py-2 space-x-2 bg-white rounded-lg text-sm text-gray-600 border border-gray-200">
+              <p>7 Days</p>
+              <ArrowDown className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-white">
+            <DropdownMenuItem onSelect={() => console.log("7 Days selected")}>
+              7 Days
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       <StatsGrid />
       <InsightsSection />

@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  Tooltip,
+  Legend,
 } from "recharts";
 
 // AI generated
@@ -117,6 +119,8 @@ export default function InsightsSection() {
                     },
                   }}
                 />
+                <Tooltip wrapperClassName="rounded-lg" />
+
                 <Bar
                   dataKey="experts"
                   fill="#FEF9C3"
@@ -124,20 +128,6 @@ export default function InsightsSection() {
                   barSize={20}
                   radius={[4, 4, 0, 0]}
                 />
-                {/* <Bar 
-                dataKey="incoming"
-                fill="#94A3B8"
-                yAxisId="left"
-                barSize={20}
-                radius={[4, 4, 0, 0]}
-              />
-              <Bar
-                dataKey="answered"
-                fill="#15B79E" 
-                yAxisId="left"
-                barSize={20}
-                radius={[4, 4, 0, 0]}
-              /> */}
                 <Line
                   type="monotone"
                   dataKey="incoming"
@@ -217,6 +207,7 @@ export default function InsightsSection() {
                   tickLine={false}
                   tick={{ fontSize: 12 }}
                 />
+                <Tooltip wrapperClassName="rounded-lg" />
                 <Bar
                   dataKey="consultations"
                   fill="#CCFBEF"
