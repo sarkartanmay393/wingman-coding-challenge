@@ -9,7 +9,7 @@ export default function SideBar() {
 
   return (
     <nav className="fixed left-0 top-0 h-screen w-[60px] bg-[#115E56] flex flex-col items-center py-4 gap-8 border-r border-[#DCDFE4] z-50">
-      <Image alt="" src="/logo.svg" width={34} height={34} />
+      <Link href='/'><Image alt="" src="/logo.svg" width={34} height={34} /></Link>
       <div className="w-7 h-px bg-[#134E48]" />
       <div className="h-full flex flex-col justify-between">
         <div className="flex flex-col gap-6">
