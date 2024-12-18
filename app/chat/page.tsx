@@ -35,19 +35,19 @@ export default function ChatPage() {
   const getAIResponse = (userMessage: string) => {
     const responses = {
       order: [
-        "I can help you track your order. Could you please provide your order number?",
-        "Your order is currently being processed. It should be shipped within 2-3 business days.",
-        "I've found your order details. Would you like to know about the shipping status?",
+        "I can assist you with tracking your order. Could you provide your order number, please?",
+        "Your order is in the processing stage and should be shipped in 2-3 business days.",
+        "I've located your order details. Would you like to know the shipping status?",
       ],
       product: [
-        "I'd be happy to provide more information about our products. What specific details are you looking for?",
-        "This product comes with a 1-year warranty and free returns within 30 days.",
-        "Let me fetch the detailed specifications for you.",
+        "I'm happy to offer more information about our products. What specific details do you need?",
+        "This product includes a 1-year warranty and offers free returns within 30 days.",
+        "Let me retrieve the detailed specifications for you.",
       ],
       help: [
-        "I'm here to help! Could you please specify what kind of assistance you need?",
-        "I can help you with orders, products, shipping, returns, or general inquiries.",
-        "Feel free to ask any questions you have about our services.",
+        "I'm here to assist! Could you specify the type of help you need?",
+        "I can assist with orders, products, shipping, returns, or general inquiries.",
+        "Feel free to ask any questions about our services.",
       ],
     };
 
