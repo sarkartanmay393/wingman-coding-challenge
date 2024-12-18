@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { ArrowUpRightIcon } from "lucide-react";
 import {
@@ -39,8 +39,8 @@ export default function Orders() {
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
   const ordersPerPage = 5;
 
-  const sortOrders = (ordersToSort: Order[]) => {
-    return [...ordersToSort].sort((a, b) => {
+  const sortedOrders = useMemo(() => {
+    return [...orders].sort((a, b) => {
       const aValue =
         sortField === "product"
           ? a.product.name
@@ -52,14 +52,23 @@ export default function Orders() {
 
       if (sortField === "orderValue" || sortField === "commission") {
         return (
-          parseFloat(aValue.replace("$", "").replace(",", "")) -
-          parseFloat(bValue.replace("$", "").replace(",", ""))
+          (parseFloat(aValue.replace("$", "").replace(",", "")) -
+            parseFloat(bValue.replace("$", "").replace(",", ""))) *
+          (sortOrder === "asc" ? 1 : -1)
         );
       }
 
       return aValue.localeCompare(bValue) * (sortOrder === "asc" ? 1 : -1);
     });
-  };
+  }, [orders, sortField, sortOrder]);
+
+  const currentOrders = useMemo(() => {
+    const indexOfLastOrder = currentPage * ordersPerPage;
+    const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
+    return sortedOrders.slice(indexOfFirstOrder, indexOfLastOrder);
+  }, [sortedOrders, currentPage, ordersPerPage]);
+
+  const totalPages = Math.ceil(orders.length / ordersPerPage);
 
   const handleSort = (field: SortField) => {
     if (field === sortField) {
@@ -68,14 +77,8 @@ export default function Orders() {
       setSortField(field);
       setSortOrder("asc");
     }
+    setCurrentPage(1);
   };
-
-  // Pagination
-  const indexOfLastOrder = currentPage * ordersPerPage;
-  const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
-  const sortedOrders = sortOrders(orders);
-  const currentOrders = sortedOrders.slice(indexOfFirstOrder, indexOfLastOrder);
-  const totalPages = Math.ceil(orders.length / ordersPerPage);
 
   return (
     <>
@@ -202,12 +205,7 @@ export default function Orders() {
           </TableBody>
         </Table>
 
-        <div className="flex items-center justify-between px-6 py-4 border-t border-gray-100">
-          <div className="hidden md:block text-sm text-gray-500">
-            Showing {indexOfFirstOrder + 1} to{" "}
-            {Math.min(indexOfLastOrder, orders.length)} of {orders.length}{" "}
-            entries
-          </div>
+        <div className="flex items-center justify-end px-6 py-4 border-t border-gray-100">
           <div className="flex flex-col md:flex-row gap-2 w-full md:w-fit">
             <Button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}

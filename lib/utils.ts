@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { type ChartData } from "@/types/charts";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -26,4 +27,17 @@ export function formatTime(date: Date): string {
     minute: 'numeric',
     hour12: true,
   }).format(date);
+}
+
+export function formatChartData<T extends Record<string, any>>(
+  data: T[],
+  categories: (keyof T)[]
+): ChartData[] {
+  return data.map((item) => ({
+    name: item.name,
+    ...categories.reduce((acc, category) => ({
+      ...acc,
+      [category]: item[category]
+    }), {})
+  }));
 }

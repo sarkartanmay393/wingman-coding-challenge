@@ -3,7 +3,6 @@ Code this Figma design in React with pixel perfection.
 
 https://www.figma.com/design/2iyOE3Sud9sLjtJcGIFhEE/Frontend-Coding-Assignment?node-id=1-3499&m=dev&t=A7o3UA3Byp66iWCO-1 
 
-
 Project Specifications:
 Ensure responsive Design
 Use React / Next.js
