@@ -1,20 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
-
-
-export async function GET(request: NextRequest) {
-  // const url = new URL(request.url);
-  // const search = url.searchParams.get("search") || "";
-
-  // console.log('url', search)
-
-  // const filteredOrders = orders.filter((order) =>
-  //   order.product.name.toLowerCase().includes(search.toLowerCase())
-  // );
-
-  return NextResponse.json(orders);
-}
-
-const orders = [
+export const orders = [
   {
     id: 1,
     product: {

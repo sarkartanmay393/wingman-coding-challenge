@@ -2,7 +2,7 @@
 
 import StatsGrid from "@/components/StatsGrid";
 import InsightsSection from "@/components/InsightsSection";
-import OrdersTable from "@/components/OrdersTable";
+import Orders from "@/components/Orders";
 import {
   Select,
   SelectContent,
@@ -44,7 +44,7 @@ function SummaryView() {
       </div>
       <StatsGrid />
       <InsightsSection />
-      <OrdersTable />
+      <Orders />
     </div>
   );
 }
@@ -58,7 +58,7 @@ function SalesView() {
           Monitor and manage your recent orders
         </p>
       </div>
-      <OrdersTable />
+      <Orders />
     </div>
   );
 }
