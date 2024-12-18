@@ -75,4 +75,40 @@ const orders = [
     orderValue: "$35.75",
     commission: "$15",
   },
+  {
+    id: 6,
+    product: {
+      name: "Wireless Mouse",
+      image: "https://picsum.photos/205",
+    },
+    date: "29 Apr 2024",
+    time: "11:00 AM",
+    timeSpent: "1h 20m",
+    orderValue: "$25.00",
+    commission: "$10",
+  },
+  {
+    id: 7,
+    product: {
+      name: "Mechanical Keyboard",
+      image: "https://picsum.photos/206",
+    },
+    date: "30 Apr 2024",
+    time: "01:30 PM",
+    timeSpent: "3h 45m",
+    orderValue: "$150.00",
+    commission: "$50",
+  },
+  {
+    id: 8,
+    product: {
+      name: "External Hard Drive",
+      image: "https://picsum.photos/207",
+    },
+    date: "01 May 2024",
+    time: "10:15 AM",
+    timeSpent: "2h 10m",
+    orderValue: "$80.00",
+    commission: "$25",
+  },
 ];

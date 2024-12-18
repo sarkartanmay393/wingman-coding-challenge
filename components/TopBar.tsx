@@ -8,7 +8,7 @@ export default function TopBar() {
   const params = useSearchParams();
 
   return (
-    <div className="flex items-center justify-between mb-8 border-b-[1px] p-2 md:py-4 md:px-6 bg-white w-[calc(100vw-61px)]">
+    <div className="fixed top-0 right-0 h-[48px] md:h-[96px] flex items-center justify-between border-b-[1px] p-2 md:py-4 md:px-6 bg-white w-[calc(100vw-61px)] z-50">
       <div className="flex items-center">
         <div className="flex items-center gap-2 md:p-1 rounded-full">
           <Link

@@ -1,11 +1,8 @@
 "use client";
 
-import Sidebar from "@/components/Sidebar";
-import TopBar from "@/components/TopBar";
 import StatsGrid from "@/components/StatsGrid";
 import InsightsSection from "@/components/InsightsSection";
 import OrdersTable from "@/components/OrdersTable";
-import { ChatProvider } from "@/context/ChatContext";
 import {
   Select,
   SelectContent,
@@ -18,23 +15,14 @@ import { useSearchParams } from "next/navigation";
 export default function Dashboard() {
   const params = useSearchParams();
 
-  return (
-    <ChatProvider>
-      <div className="flex min-h-screen overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 ml-[60px] overflow-autp bg-white">
-          <TopBar />
-          {params.get("tab") === "summary" ? (
-            <SummaryView />
-          ) : params.get("tab") === "sales" ? (
-            <SalesView />
-          ) : (
-            <></>
-          )}
-        </main>
-      </div>
-    </ChatProvider>
-  );
+  switch (params.get("tab")) {
+    case "summary":
+      return <SummaryView />;
+    case "sales":
+      return <SalesView />;
+    default:
+      return <></>;
+  }
 }
 
 function SummaryView() {
@@ -63,7 +51,7 @@ function SummaryView() {
 
 function SalesView() {
   return (
-    <div className="bg-white rounded-2xl shadow-sm p-6">
+    <div className="bg-white rounded-2xl shadow-sm p-6 space-y-8">
       <div className="mb-6">
         <h2 className="text-xl font-semibold text-gray-900">Recent Orders</h2>
         <p className="text-sm text-gray-500 mt-1">

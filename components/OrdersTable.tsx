@@ -110,8 +110,8 @@ export default function OrdersTable() {
 
   return (
     <>
-      <h1 className="text-3xl py-6 px-2">Orders</h1>
-      <div className="bg-white rounded-2xl border-[0.5px] drop-shadow-sm overflow-hidden">
+        <h1 className="text-xl md:text-3xl">Orders</h1>
+        <div className="bg-white rounded-2xl border-[0.5px] drop-shadow-sm overflow-hidden">
         <table className="w-full">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-100">
