@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { ChatProvider } from "@/context/ChatContext";
-import Sidebar from "@/components/Sidebar";
 import TopBar from "@/components/TopBar";
+import SideBar from "@/components/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-[#f8f9fa] max-w-screen`}>
         <ChatProvider>
           <div className="flex min-h-screen overflow-hidden">
-            <Sidebar />
+            <SideBar />
             <main className="flex-1 ml-[60px] mt-[48px] md:mt-[96px] overflow-auto bg-white">
               <TopBar />
               {children}
