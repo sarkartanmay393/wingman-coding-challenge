@@ -1,12 +1,17 @@
+![Logo](/public/logo.svg)
+
 # Wingman UI Coding Challenge
 
 This project implements a **responsive** and **pixel-perfect** UI based on the provided Figma design. It leverages the foundational structure generated with **Next.js**, **Tailwind CSS**, and **shadcn/ui**.
 
-## Tech Stack
+---
 
-- **Next.js**: For building the React-based frontend application.
-- **Tailwind CSS**: For utility-first responsive styling.
-- **shadcn/ui**: For pre-styled UI components.
+## Tools & Libraries Used
+
+- **Tailwind CSS**: Responsive utility classes for styling.
+- **shadcn/ui**: For building modular UI components.
+- **Chart.js or Recharts** *(optional)*: For rendering dynamic graphs.
+- **Next.js**: For server-side rendering and routing.
 
 ---
 
@@ -16,7 +21,6 @@ This project implements a **responsive** and **pixel-perfect** UI based on the p
 src/
 ├── app/                     # Next.js app directory
 ├── components/              # Reusable components
-├── styles/                  # Tailwind and global styles
 └── utils/                   # Helper functions
 ```
 
@@ -26,8 +30,8 @@ src/
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd wingman-ui-challenge
+   git clone https://github.com/sarkartanmay393/wingman-coding-challenge
+   cd wingman-coding-challenge
    ```
 
 2. **Install dependencies**:
@@ -56,15 +60,6 @@ src/
 
 ---
 
-## Tools & Libraries Used
-
-- **Tailwind CSS**: Responsive utility classes for styling.
-- **shadcn/ui**: For building modular UI components.
-- **Chart.js or Recharts** *(optional)*: For rendering dynamic graphs.
-- **Next.js**: For server-side rendering and routing.
-
----
-
 ## Features
 
 - Dashboard UI with summary metrics
@@ -84,17 +79,13 @@ The layout should adapt seamlessly to all screen sizes:
 
 ## Development Notes
 
-1. Use Tailwind's responsive classes (e.g., `sm:`, `md:`, `lg:`) for flexibility.
-2. Extract reusable components (e.g., **Cards**, **Tables**, **Charts**).
-3. Verify pixel perfection using tools like **Figma to Code** or browser developer tools.
+--
 
 ---
 
 ## Deployment
 
-Deploy using platforms like:
-- **Vercel** (recommended for Next.js apps)
-- **Netlify**
+Deploy using platforms like: **Vercel**
 
 Run:
 ```bash
